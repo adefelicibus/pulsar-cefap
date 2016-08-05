@@ -9,9 +9,6 @@ export TOX_WORK_DIR=/tmp
 export USER=root
 export HOME=/tmp
 
-# Old hard-coded tests.
-#cd /pulsar; pyflakes pulsar test && flake8 --exclude test_tool_deps.py --max-complexity 9 pulsar test && nosetests
-
 echo "Running pulsar server"
 cd /usr/share/pulsar/; pulsar
 
