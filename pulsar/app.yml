@@ -9,8 +9,8 @@ managers:
       num_concurrent_jobs: 1
       
     queue:
-     type: queued_python
-     num_concurrent_jobs: 4
+      type: queued_python
+      num_concurrent_jobs: 8
 
 
 ## Mode to create job releated directories with. If unset
@@ -36,7 +36,7 @@ managers:
 ## Pulsar-equivalent of Galaxy's tool_dependency_dir. The default directory
 ## used by tool dependency resolves to find dependency scripts. Used
 ## if Galaxy configures remote dependency resolution.
-#tool_dependency_dir: dependencies
+tool_dependency_dir: /galaxy-central/tool_deps
 
 ## Pulsar-equivalent of Galaxy's tool_dependency_resolves_conf.
 # dependency_resolvers_config_file: dependency_resolvers_conf.xml
