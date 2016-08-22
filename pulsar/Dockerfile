@@ -39,6 +39,10 @@ RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pulsar
 
 RUN . /usr/share/pulsar/venv/bin/activate; cd /usr/share/pulsar; pulsar-config
 
+# Install needed modules
+RUN cpan App::cpanminus
+RUN cpanm URI::Escape
+
 ADD env_container.sh /usr/share/pulsar/env_container.sh
 ADD startup.sh /usr/sbin/startup.sh 
 ADD app.yml /usr/share/pulsar/
