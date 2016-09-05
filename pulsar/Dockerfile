@@ -13,7 +13,7 @@ USER root
 RUN apt-get -qq update && \
     apt-get install --no-install-recommends -y software-properties-common && \
     apt-get -qq update && \
-    apt-get install --no-install-recommends -y build-essential \
+    apt-get install --no-install-recommends -y build-essential libgd2-xpm-dev \
     python-dev python-virtualenv \
     libswitch-perl libcurl4-openssl-dev python-pip \
     python2.7 python2.7-dev git default-jre \
@@ -42,6 +42,8 @@ RUN . /usr/share/pulsar/venv/bin/activate; cd /usr/share/pulsar; pulsar-config
 # Install needed modules
 RUN cpan App::cpanminus
 RUN cpanm URI::Escape
+RUN cpanm GD::Graph::bars
+RUN cpanm PerlIO::gzip
 
 ADD env_container.sh /usr/share/pulsar/env_container.sh
 ADD startup.sh /usr/sbin/startup.sh 
