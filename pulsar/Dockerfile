@@ -2,6 +2,8 @@
 
 # Run a Pulsar Server on a Docker Container
 
+# Version 1.0.0
+
 FROM ubuntu:14.04
 
 MAINTAINER Alexandre Defelicibus, adefelicibus@gmail.com
