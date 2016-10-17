@@ -35,7 +35,7 @@ RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed bx-pyt
 
 RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pycurl
 
-RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pulsar-app==0.7.0.dev5
+RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pulsar-app==0.7.2
 
 RUN . /usr/share/pulsar/venv/bin/activate; cd /usr/share/pulsar; pulsar-config
 
@@ -52,7 +52,8 @@ ADD server.ini /usr/share/pulsar/
 ADD local_env.sh /usr/share/pulsar/
 
 RUN ln -s /mnt/shed_tools/ /shed_tools
-RUN ln -s /mnt/galaxy-central /galaxy-central
+RUN ln -s /mnt/ /galaxy-central
+RUN ln -s /mnt/tool_deps /tool_deps
 RUN ln -s /mnt/shed_tools/toolshed.g2.bx.psu.edu/repos/peterjc/mira4_assembler/a4f602cc3aa9/mira4_assembler/tools/mira4_0/mira4_make_bam.py /usr/share/pulsar/venv/lib/python2.7/site-packages/
 
 RUN chmod +x /usr/sbin/startup.sh
