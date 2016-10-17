@@ -35,7 +35,7 @@ RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed bx-pyt
 
 RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pycurl
 
-RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pulsar-app==0.7.0.dev5
+RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pulsar-app==0.7.2
 
 RUN . /usr/share/pulsar/venv/bin/activate; cd /usr/share/pulsar; pulsar-config
 
