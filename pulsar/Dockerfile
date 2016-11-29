@@ -39,6 +39,10 @@ RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pycurl
 
 RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pulsar-app==0.7.2
 
+RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed sqlalchemy routes webhelpers
+
+RUN . /usr/share/pulsar/venv/bin/activate; pip install --ignore-installed pysam Cheetah Crypto pycrypto mercurial
+
 RUN . /usr/share/pulsar/venv/bin/activate; cd /usr/share/pulsar; pulsar-config
 
 # Install needed modules
@@ -62,7 +66,5 @@ RUN chmod +x /usr/sbin/startup.sh
 RUN chmod +x /usr/share/pulsar/env_container.sh
 
 EXPOSE :8913
-
-# VOLUME ["/pulsar"]
 
 ENTRYPOINT ["/usr/sbin/startup.sh"]
